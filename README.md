@@ -1,46 +1,71 @@
 # MerchantFloat-AI
-AI credit scoring API for Nigeria SMEs
+AI powered credit scoring and loan recommendation system for SMEs using POS transaction data.
+
 Overview
-MerchantFloat AI is an AI-powered credit scoring and loan recommendation system designed for POS merchants. It analyzes transaction behavior to determine creditworthiness, risk level, and loan eligibility in real time.
+MerchantFloat AI is a data driven scoring system that evaluates the financial health of merchants based on transaction behavior. It transforms raw POS data into actionable insights, including credit scores, risk classification and loan recommendations in real time. 
 
 Problem
-Many small and medium-sized merchants lack access to credit due to:
-	•	No formal credit history
-	•	Dependence on collateral
-	•	Manual risk assessment
+Many small and medium sized enterprises(SMEs) struggle to access credit due to:
+	•	Lack of formal credit history
+	•	Heavy reliance on collateral
+	•	Manual and inefficient risk assessment processes.
 
  Solution
-MerchantFloat AI uses POS transaction data to:
+MerchantFloat AI leverages transaction level data to:
 	•	Generate credit scores (300–850 scale)
-	•	Classify merchants into risk levels
+	•	Classify merchants into risk levels(Low, Medium, High)
 	•	Recommend loan amounts dynamically
-	•	Provide actionable business insights
+	•	Provide explainable, data driven insights
   
 Features
-	•	AI-based credit scoring engine
-	•	Risk classification (Low, Medium, High)
-	• Loan recommendation system
+	•	AI-powered credit scoring engine
+	•	Risk classification system
+	•   Loan recommendation logic
 	•	Merchant behavioral analysis
-	•	Explainable insights
+	•	Explainable insights for decision making
+	
+Technical Approach
+Feature Engineering
+Transaction data is aggregated into merchant level metrics such as
+    •	Average revenue
+	•	Revenue volatility
+	•	Customer retention rate
+	•	Settlement delays
+	•	Transaction activity
+
+Machine Learning
+	•	K-Means clustering for behavioral segmentation
+	•	StandardScaler for normalization
+	•	Hybrid approach combining ML + rule-based scoring
+
+Scoring System
+	•	Weighted scoring model based on:
+	•	Revenue strength
+	•	Consistency
+	•	Customer loyalty
+	•	Transaction volume
+	•	Output normalized to a 300–850 credit score range
+
+System Architecture
+
+Transaction Data → Backend (Bun.js) → FastAPI (AI Engine) → Scoring Output → Frontend Dashboard
+
 
 Tech Stack
 	•	Python (FastAPI)
 	•	Scikit-learn (K-Means Clustering)
 	•	Pandas / NumPy
 	•	REST API
-	•	Frontend (Vercel deployment)
+	
    System Architecture
 
 Transaction Data → Backend (Bun.js) → FastAPI (AI Engine) → Scoring Output → Frontend Dashboard
 
 API Endpoints
-GET all merchants
-/analyze
-GET single merchant
-/analyze/{merchant_id}
-POST (Real-time analysis)
-/analyze
-Sample Request (POST)
+Method       Endpoint                          Description
+GET          /analyze                        Get all merchants
+GET          /analyze/{merchant_id}          Get single merchant
+POST         /analyze                        Analyze transaction data
 
 {"transaction":[
 {"merchant_id": "M_TEST",
@@ -56,17 +81,22 @@ Sample Request (POST)
 ]
 }
 
-Team
-	• Onwukamuche Onyinyechi Lynda - Data Scientist
-	• David Uhumagho - Ful-Stack Developer
-	• Seimat Akinwale - Product Manager
+My Contribution
+
+As the Data Scientist on this project, I:
+	•	Designed and generated the dataset
+	•	Built the feature engineering pipeline
+	•	Implemented clustering (K-Means)
+	•	Developed the credit scoring logic
+	•	Created the risk classification system
+	•	Built the AI API using FastAPI
 
 Future Improvements
-	•	Integration with payment APIs (e.g., Interswitch)
-	•	Real-time streaming data
+	•	Integration with payment platforms such as Interswitch
+	•	Real time streaming data processing
 	•	Advanced ML models (XGBoost, Neural Networks)
-	•	Fraud detection
+	•	Fraud detection capabilities
 
-Hackathon Goal
+Project Goal
 
-To provide an inclusive, data driven lending solution that empowers merchants and improves financial accessibility.
+To enable inclusive, data driven lending by using real transaction behavior instead of traditional credit history.
