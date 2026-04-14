@@ -4,14 +4,15 @@ AI powered credit scoring and loan recommendation system for SMEs using POS tran
 
 Overview
 
-MerchantFloat AI is a data driven scoring system that evaluates the financial health of merchants based on transaction behavior. It transforms raw POS data into actionable insights, including credit scores, risk classification and loan recommendations in real time. 
+MerchantFloat AI is a data driven scoring system that evaluates the financial health of small and medium sized enterprises (SMEs) using point of sales (POS) transaction data. It transforms raw transaction data into credit scores, risk classifications, and loan recommendations. 
 
 Problem
 
-Many small and medium sized enterprises(SMEs) struggle to access credit due to:
+Many small and medium sized enterprises(SMEs) face limited access to credit due to:
 	•	Lack of formal credit history
 	•	Heavy reliance on collateral
-	•	Manual and inefficient risk assessment processes.
+	•	Inefficient manual risk assessment.
+	This project addresses these challenges by leveraging transcational data to build an alternative, data driven credit evaluation system.
 
  Solution
  
@@ -105,11 +106,11 @@ As the Data Scientist on this project, I:
 	•	Built the AI API using FastAPI
 
 Future Improvements
-	•	Integration with payment platforms such as Interswitch
+	•	Integration with real payment platforms (e.g., Interswitch)
 	•	Real time streaming data processing
 	•	Advanced ML models (XGBoost, Neural Networks)
 	•	Fraud detection capabilities
 
 Project Goal
 
-To enable inclusive, data driven lending by using real transaction behavior instead of traditional credit history.
+To enable inclusive, data driven lending by using real transaction behavior rather than traditional credit history.
